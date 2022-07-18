@@ -1,0 +1,8 @@
+.upload-preview .ant-upload-list-picture-card-container {
+    width: 200px;
+    height: 200px;
+}
+
+.upload-preview {
+    text-align: center;
+}

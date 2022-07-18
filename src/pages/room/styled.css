@@ -1,0 +1,18 @@
+.avatar-uploader > .ant-upload {
+    width: 128px;
+    height: 128px;
+}
+
+.ant-modal {
+    top: 10px;
+}
+
+.ant-card-body{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.ant-layout-content .site-layout-background{
+    padding-left: 5px;
+    padding-right: 5px;
+}
