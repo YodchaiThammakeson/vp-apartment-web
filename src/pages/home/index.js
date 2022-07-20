@@ -64,7 +64,7 @@ export default function PageHome() {
             <Image src={LineImage} width={300} height={200}></Image>
             <p>Facebook Page</p>
             <p>VP Apartment</p>
-            <a href='https://www.facebook.com/vpapartmentrangsit' target='_blank'>FaceBook VP Apartmentrangsit</a>
+            <a href='https://www.facebook.com/vpapartmentrangsit' target='_blank' rel="noreferrer">FaceBook VP Apartmentrangsit</a>
             <p>โอนเงินการจอง หรือ ชำระน้ำ-ไฟ</p>
             <p>ธ.กสิกร 062-8-36566-0 นาย กฤตนันท์ ตัณฑวิบูลย์วงศ์</p>
             <Image src={KBank} width={300} height={200}></Image>
