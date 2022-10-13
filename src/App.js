@@ -189,7 +189,7 @@ class MySider extends React.Component {
   render() {
     return (
       <>
-        <Router>
+        <Router basename={process.env.REACT_APP_BASENAME}>
           <Layout>
             <Sider
               trigger={null}
