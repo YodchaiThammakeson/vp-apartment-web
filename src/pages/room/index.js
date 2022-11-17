@@ -177,7 +177,7 @@ export default function PageRoom() {
                       uid: item?.file_id,
                       name: item?.file_name,
                       status: 'done',
-                      url: `${process.env.REACT_APP_SERVICE_URL}${item.file_path}`,
+                      url: `${item.file_path}`,
                     })
                   })
 
@@ -212,7 +212,7 @@ export default function PageRoom() {
                       uid: item?.file_id,
                       name: item?.file_name,
                       status: 'done',
-                      url: `${process.env.REACT_APP_SERVICE_URL}${item.file_path}`,
+                      url: `${item.file_path}`,
                     })
                   })
 

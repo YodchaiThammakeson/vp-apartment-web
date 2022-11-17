@@ -7,11 +7,12 @@ import { responseSuccess, responseError } from '../../utils/response'
 
 export const mapField = (item, index) => {
     const id = item?.user_id
+    console.log(`${process.env.REACT_APP_SERVICE_URL}${item.file_path}`)
     return {
         index,
         key: uuidv4(),
         ...item,
-        // file_path: `${process.env.REACT_APP_SERVICE_URL}${item.file_path}`
+        file_path: `${process.env.REACT_APP_SERVICE_URL}${item.file_path}`
     }
 }
 

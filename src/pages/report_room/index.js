@@ -188,9 +188,12 @@ export default function PageReportRoom() {
                       uid: item?.file_id,
                       name: item?.file_name,
                       status: 'done',
-                      url: `${process.env.REACT_APP_SERVICE_URL}${item.file_path}`,
+                      url: item.file_path,
                     })
                   })
+
+                  console.log(filesData)
+
                   if(record.room_status == "จอง"){
                     setDisabledEffectiveDate(true)
                   }else{

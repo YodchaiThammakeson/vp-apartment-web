@@ -3,7 +3,7 @@ import { useState } from 'react'
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './App.css';
-import { Button, Layout, Menu, Modal, Form, Input, Spin, notification, Space } from 'antd';
+import { Button, Layout, Menu, Modal, Form, Input, Spin, notification, Space, Image } from 'antd';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
@@ -17,7 +17,7 @@ import {
   LogoutOutlined,
   LoginOutlined,
   UserAddOutlined,
-  CommentOutlined
+  CommentOutlined,
 } from '@ant-design/icons';
 import {
   BrowserRouter as Router,
@@ -41,6 +41,9 @@ import PageMonthlyDashboard from './pages/monthly_dashboard';
 import PageFeedBack from './pages/feed_back';
 import PageFeedBackAdmin from './pages/feed_back_admin';
 import PageUsageRoomDashboard from './pages/usage_room_dashboard';
+
+
+import logo from './images/logo.png'
 
 import { loginApi, getMeApi, logoutApi, registerApi, forgetPasswordApi } from './services/auth';
 
@@ -195,7 +198,9 @@ class MySider extends React.Component {
               trigger={null}
               collapsible
               collapsed={this.state.collapsed}>
-              <div className="logo" />
+              <div className="logo" >
+                <Image src={logo} preview={false}  width={48} height={32} ></Image>
+              </div>
               <Menu
                 theme="dark"
                 mode="inline"
@@ -229,9 +234,9 @@ class MySider extends React.Component {
               </div>
             </Sider>
             <Layout className="site-layout">
-              <Header className="site-layout-background" style={{ padding: 0 }}>
+              <Header className="site-layout-background" style={{ padding: 0, backgroundColor: '#001529'}}>
                 {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                  className: 'trigger',
+                  className: 'trigger IconT',
                   onClick: this.toggle,
                 })}
                 {
@@ -272,9 +277,9 @@ class MySider extends React.Component {
                       {/* // </span> */}
                     </Space>
                     :
-                    <span style={{ float: 'right', paddingRight: 50 }}>
+                    <div  style={{ float: 'right', paddingRight: 50, width: 200, textAlign: 'right' ,color: '#a6adb4'}}>
                       {JSON.parse(localStorage.getItem('auth')).user.user_full_name}
-                    </span>
+                    </div>
                 }
 
               </Header>
@@ -563,7 +568,7 @@ class MySider extends React.Component {
                 labelCol={{ span: 6 }}
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     type: 'email',
                     message: 'กรุณากรอก E-mail',
                   },

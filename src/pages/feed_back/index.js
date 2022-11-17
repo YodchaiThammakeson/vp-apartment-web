@@ -139,11 +139,11 @@ export default function PageFeedBack() {
           </Space>
           <Row>
           <Col xs={24} lg={24}>
-              <Select>
+              {/* <Select>
                 <Select.Option value={null}>ทั้งหมด</Select.Option>
                 <Select.Option value={1}>ทราบแล้ว</Select.Option>
                 <Select.Option value={0} disabled>ยังไม่รับทราบ</Select.Option>
-              </Select>
+              </Select> */}
               <Table
                 columns={columns}
                 dataSource={data?.items}
