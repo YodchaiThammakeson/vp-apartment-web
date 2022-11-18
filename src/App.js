@@ -225,7 +225,7 @@ class MySider extends React.Component {
                     ...this.state,
                     auth: null
                   })
-                  window.location.href = `${window.location.origin.toString()}`
+                  // window.location.href = `${window.location.origin.toString()}${process.env.REACT_APP_BASENAME}`
 
                 }}
                 >
@@ -424,7 +424,7 @@ class MySider extends React.Component {
                     visibleModelCreate: false,
                     loadingPage: false
                   })
-                  window.location.href = `${window.location.origin.toString()}`
+                  window.location.href = `${window.location.origin.toString()}${process.env.REACT_APP_BASENAME}`
                 } else {
                   notification.warn({
                     message: `แจ้งเตือน`,
