@@ -101,7 +101,7 @@ export default function PageNearbyLocation() {
               </Descriptions.Item>
             </Descriptions>
             <Descriptions>
-              <Descriptions.Item style={{ height: "150px" }} label="Google map"><a href={data.map} rel="noreferrer" target="_blank">{data.map}</a></Descriptions.Item>
+              <Descriptions.Item style={{ height: "150px" }} label="Google map"><a className='googlemap' href={data.map} rel="noreferrer" target="_blank">{data.map}</a></Descriptions.Item>
             </Descriptions>
 
           </Card>

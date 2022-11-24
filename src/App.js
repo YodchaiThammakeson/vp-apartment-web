@@ -717,7 +717,7 @@ class MySider extends React.Component {
                 <Input showCount maxLength={10} placeholder='หมายเลขโทรศัพท์' />
               </Form.Item>
               <Form.Item
-                label="Password"
+                label="New Password"
                 name="password"
                 labelCol={{ span: 6 }}
                 rules={[

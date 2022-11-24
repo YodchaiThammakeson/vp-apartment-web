@@ -335,7 +335,7 @@ export default function PageUser() {
                 labelCol={{ span: 6 }}
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     message: 'กรุณากรอกเลขบัตรประชาชน',
                   },
                 ]}
