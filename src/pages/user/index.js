@@ -158,7 +158,7 @@ export default function PageUser() {
 
   const _list = async () => {
     setLoadingPage(true)
-    let data = await getUserApi({ ...filters, ...filtersSearch, page: 1 })
+    let data = await getUserApi({ ...filters, ...filtersSearch })
 
     setTotal(data.total)
     setData(data)
@@ -225,6 +225,9 @@ export default function PageUser() {
                         room_id: value
                       })
                     }}
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                     options={dropdownRoomNo}
                   // defaultValue={['a10', 'c12']}
                   // onChange={handleChange}
@@ -244,6 +247,9 @@ export default function PageUser() {
                         user_id: value
                       })
                     }}
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                     options={dropdownUser}
                   >
 
@@ -284,6 +290,7 @@ export default function PageUser() {
                 showTotal: (total) => `Total ${total} items`
               }}
               onChange={async (pagination) => {
+                console.log(pagination)
                 await setFilters({
                   ...filters,
                   page: pagination.current,
@@ -348,7 +355,7 @@ export default function PageUser() {
                 labelCol={{ span: 6 }}
                 rules={[
                   {
-                    required: true,
+                    required: false,
                     message: 'กรุณากรอก E-mail',
                   },
                 ]}

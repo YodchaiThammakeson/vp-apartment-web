@@ -401,7 +401,10 @@ export default function PageRoom() {
                     showSearch
                     mode='multiple'
                     placeholder="Room"
-                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
+                    // optionFilterProp="children"
                     onChange={(value) => {
                       setFiltersSearch({
                         ...filtersSearch,
@@ -409,9 +412,9 @@ export default function PageRoom() {
                       })
                     }}
                     // onSearch={onSearch}
-                    filterOption={(input, option) =>
-                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }
+                    // filterOption={(input, option) =>
+                    //   option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    // }
                     options={dropdownRoomNo}
                   >
 
@@ -426,7 +429,7 @@ export default function PageRoom() {
                     showSearch
                     mode='multiple'
                     placeholder="Building"
-                    optionFilterProp="children"
+                    // optionFilterProp="children"
                     onChange={(value) => {
                       setFiltersSearch({
                         ...filtersSearch,
@@ -435,7 +438,7 @@ export default function PageRoom() {
                     }}
                     // onSearch={onSearch}
                     filterOption={(input, option) =>
-                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     options={dropdownBuilding}
                   >
@@ -484,7 +487,7 @@ export default function PageRoom() {
                     }}
                     // onSearch={onSearch}
                     filterOption={(input, option) =>
-                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     options={dropdownBalanceRoom}
                   >
@@ -569,7 +572,6 @@ export default function PageRoom() {
                 showTotal: (total) => `Total ${total} items`,
               }}
               onChange={async (pagination) => {
-                console.log(pagination)
                 await setFilters({
                   ...filters,
                   page: pagination.current,

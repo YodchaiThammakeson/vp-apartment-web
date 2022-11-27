@@ -214,6 +214,9 @@ export default function PageElectricityOverdue() {
                     style={{ width: '100%' }}
                     placeholder="เลขห้อง"
                     options={dropdownRoomNo}
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                     onChange={(value) => {
                       setFiltersSearch({
                         ...filtersSearch,
@@ -231,6 +234,9 @@ export default function PageElectricityOverdue() {
                     style={{ width: '100%', paddingRight: 5 }}
                     placeholder="เลขห้อง"
                     options={dropdownBuilding}
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                     onChange={(value) => {
                       setFiltersSearch({
                         ...filtersSearch,
@@ -253,6 +259,9 @@ export default function PageElectricityOverdue() {
                         user_id: value
                       })
                     }}
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                     options={dropdownUser}
                   >
                   </Select>

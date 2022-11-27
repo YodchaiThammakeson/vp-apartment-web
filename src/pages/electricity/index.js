@@ -318,6 +318,7 @@ export default function PageElectricity() {
     //   ...filters,
     //   total: data.total
     // })
+    setTotal(data.total)
     setLoadingPage(false)
   }
 
@@ -393,6 +394,10 @@ export default function PageElectricity() {
                 <Form.Item label="เลขห้อง">
                   <Select
                     mode="multiple"
+                    allowClear
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                     options={dropdownRoomNo}
                     style={{ width: '100%' }}
                     placeholder="เลขห้อง"
@@ -411,7 +416,10 @@ export default function PageElectricity() {
                   <Select
                     mode="multiple"
                     style={{ width: '100%', paddingRight: 5 }}
-                    placeholder="เลขห้อง"
+                    placeholder="ตึก"
+                    filterOption={(input, option) =>
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                     options={dropdownBuilding}
                     onChange={(value) => {
                       setFiltersSearch({

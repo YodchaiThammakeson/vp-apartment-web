@@ -303,7 +303,7 @@ export default function PageReservRoom() {
                     showSearch
                     mode='multiple'
                     placeholder="Room"
-                    optionFilterProp="children"
+                    // optionFilterProp="children"
                     onChange={(value) => {
                       setFiltersSearch({
                         ...filtersSearch,
@@ -312,7 +312,7 @@ export default function PageReservRoom() {
                     }}
                     // onSearch={onSearch}
                     filterOption={(input, option) =>
-                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     options={dropdownRoomNo}
                   >
@@ -327,7 +327,7 @@ export default function PageReservRoom() {
                     showSearch
                     mode='multiple'
                     placeholder="Building"
-                    optionFilterProp="children"
+                    // optionFilterProp="children"
                     onChange={(value) => {
                       setFiltersSearch({
                         ...filtersSearch,
@@ -336,7 +336,7 @@ export default function PageReservRoom() {
                     }}
                     // onSearch={onSearch}
                     filterOption={(input, option) =>
-                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     options={dropdownBuilding}
                   >
@@ -351,7 +351,7 @@ export default function PageReservRoom() {
                     showSearch
                     mode='multiple'
                     placeholder="Room Type"
-                    optionFilterProp="children"
+                    // optionFilterProp="children"
                     onChange={(value) => {
                       setFiltersSearch({
                         ...filtersSearch,
@@ -360,7 +360,7 @@ export default function PageReservRoom() {
                     }}
                     // onSearch={onSearch}
                     filterOption={(input, option) =>
-                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     options={dropdownRoomType}
                   >
