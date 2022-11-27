@@ -573,6 +573,9 @@ export default function PageElectricity() {
                   style={{ width: '100%' }}
                   placeholder="เลขห้อง"
                   options={dropdownRoomByStatus}
+                  filterOption={(input, option) =>
+                    option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
                 // onChange={handleChange}
                 >
                 </Select>
