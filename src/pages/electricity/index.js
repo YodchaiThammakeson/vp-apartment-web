@@ -174,10 +174,32 @@ export default function PageElectricity() {
       width: 100,
     },
     {
+      title: 'หน่วยที่ใช้น้ำ',
+      dataIndex: 'water_start_unit',
+      key: 'water_start_unit',
+      width: 100,
+      render: (text, record) => {
+        return (
+          `${record.water_start_unit} - ${record.water_end_unit}`
+        )
+      }
+    },
+    {
       title: 'ค่าน้ำ',
       dataIndex: 'water_amount',
       key: 'water_amount',
       width: 100,
+    },
+    {
+      title: 'หน่วยที่ใช้ไฟฟ้า',
+      dataIndex: 'electricity_start_unit',
+      key: 'electricity_start_unit',
+      width: 100,
+      render: (text, record) => {
+        return (
+          `${record.electricity_start_unit} - ${record.electricity_end_unit}`
+        )
+      }
     },
     {
       title: 'ค่าไฟฟ้า',
@@ -350,7 +372,7 @@ export default function PageElectricity() {
   const calculateWater = async(start_val,end_val) =>{
     if( start_val != null && end_val != null){
       form.setFieldsValue({
-        water_amount: (end_val - start_val) * 25
+        water_amount: ((end_val - start_val) * 25).toFixed(2)
       })
     }
   }
@@ -366,7 +388,7 @@ export default function PageElectricity() {
       }
       form.setFieldsValue({
         
-        electricity_amount: cost
+        electricity_amount: (cost).toFixed(2)
       })
     }
   }
