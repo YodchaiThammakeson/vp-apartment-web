@@ -69,7 +69,8 @@ export const createElectricityBillApi = ({
     electricity_amount,
     trash_amount,
     comsumption_water,
-    water_amount
+    water_amount,
+    discount
 }) => {
 
     const data = {
@@ -83,7 +84,8 @@ export const createElectricityBillApi = ({
         comsumption_water: comsumption_water,
         water_start_unit: water_start_unit,
         water_end_unit: water_end_unit,
-        water_amount: water_amount
+        water_amount: water_amount,
+        discount: discount
     }
 
     const config = {
@@ -114,7 +116,8 @@ export const updateElectricityBillApi = ({
     electricity_amount,
     trash_amount,
     comsumption_water,
-    water_amount
+    water_amount,
+    discount
 }, id) => {
 
     const data = {
@@ -125,7 +128,8 @@ export const updateElectricityBillApi = ({
         electricity_amount: electricity_amount,
         trash_amount: trash_amount,
         comsumption_water: comsumption_water,
-        water_amount: water_amount
+        water_amount: water_amount,
+        discount: discount
     }
 
     const config = {

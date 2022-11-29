@@ -220,6 +220,12 @@ export default function PageElectricity() {
       width: 100,
     },
     {
+      title: 'ส่วนลด',
+      dataIndex: 'discount',
+      key: 'discount',
+      width: 100,
+    },
+    {
       title: 'สถานะ',
       dataIndex: 'status_payment',
       key: 'status_payment',
@@ -266,7 +272,8 @@ export default function PageElectricity() {
                     water_end_unit: record.water_end_unit,
                     water_start_unit: record.water_start_unit,
                     electricity_end_unit: record.electricity_end_unit,
-                    electricity_start_unit: record.electricity_start_unit
+                    electricity_start_unit: record.electricity_start_unit,
+                    discount: record.discount
                   })
                   setWaterStartUnit(record.water_start_unit)
                   setWaterEndUnit(record.water_end_unit)
@@ -719,6 +726,19 @@ export default function PageElectricity() {
                 ]}
               >
                 <InputNumber style={{ width: '100%' }} placeholder='ค่าเก็บขยะ' />
+              </Form.Item>
+              <Form.Item 
+                label="ส่วนลด" 
+                name="discount" 
+                labelCol={{ span: 6 }}
+                rules={[
+                  {
+                    required: true,
+                    message: 'กรุณากรอกส่วนลด',
+                  },
+                ]}
+              >
+                <InputNumber style={{ width: '100%' }} placeholder='ส่วนลด' />
               </Form.Item>
               <Form.Item
                 style={{display:'none'}} 
