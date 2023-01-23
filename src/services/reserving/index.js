@@ -65,7 +65,7 @@ export const getLeaveOrChangeRoomApi = ({
 
     const params = {
         page: page,
-        size: size,
+        perPage: size,
         room_id: room_id,
         building_name: building_name,
         room_type: room_type,
